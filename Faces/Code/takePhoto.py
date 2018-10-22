@@ -18,7 +18,7 @@ while True:
 
     if (cv2.waitKey(1) & 0xff == ord("p")):
         count += 1
-        cv2.imwrite("../att_faces/ss/"+str(count)+".jpg", image)
+        cv2.imwrite("wjj"+str(count)+".jpg", image)
         print("Take photo %d" % count)
         continue
 

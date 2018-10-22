@@ -22,8 +22,8 @@ path = []
 image = []
 facees = []
 
-for i in range(10):
-    path.append("../att_faces/ss/"+str(i+1)+".jpg")
+for i in range(11):
+    path.append("WJJ/wjj"+str(i+1)+".jpg")
     image.append(cv2.imread(path[i]))
 
     # 探测图片中的人脸
@@ -33,9 +33,9 @@ for i in range(10):
 
         image[i],
 
-        scaleFactor=1.2,
+        scaleFactor=1.3,
 
-        minNeighbors=3,
+        minNeighbors=5,
 
         minSize=(5, 5)
 
@@ -48,24 +48,15 @@ for i in range(10):
 
         cv2.rectangle(image[i], (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    xii, yii = int((x + w//2)*0.67), int((y+h//2)*0.67)
-
-    k = 92 / w
-
-    print(k)
-
-    imgcp = cv2.resize(imgcp, None, fx=k, fy=k)
 
 
-    xi2, yi2 = imgcp.shape[:2]
-
-    xi, yi = xi2//2-6 , yi2//2 + 8
 
 
-    facees.append(imgcp[yii-56:yii+56, xii-46:xii+46])
+
+    facees.append(imgcp[y:y+h, x:x+w])
 
     print(facees[i].shape)
-    cv2.imwrite("../att_faces/s41/"+str(i+1)+".jpg", facees[i])
+    cv2.imwrite("../att_faces/s2/"+str(i+1)+".jpg", facees[i])
 
 
 

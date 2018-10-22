@@ -33,7 +33,7 @@ while(True):
 
         gray,
 
-        scaleFactor=1.15,
+        scaleFactor=1.3,
 
         minNeighbors=5,
 
